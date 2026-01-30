@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dattakala College</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: #1a365d;
+            color: white;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo i {
+            font-size: 2rem;
+            color: #e2b714;
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #e2b714;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(26, 54, 93, 0.8), rgba(26, 54, 93, 0.9)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 80px 0;
+        }
+        
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        /* Vision Section */
+        .vision {
+            padding: 60px 0;
+            background: #f8f9fa;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #1a365d;
+        }
+        
+        .vision-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .vision-text {
+            flex: 1;
+        }
+        
+        .vision-text h3 {
+            color: #1a365d;
+            margin-bottom: 15px;
+        }
+        
+        .vision-image {
+            flex: 1;
+        }
+        
+        .vision-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* Quick Stats */
+        .stats {
+            padding: 50px 0;
+            background: #1a365d;
+            color: white;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            text-align: center;
+        }
+        
+        .stat-item h3 {
+            font-size: 2.5rem;
+            color: #e2b714;
+            margin-bottom: 10px;
+        }
+        
+        /* Facilities */
+        .facilities {
+            padding: 60px 0;
+        }
+        
+        .facilities-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+        
+        .facility-item {
+            text-align: center;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+        
+        .facility-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .facility-item i {
+            font-size: 2.5rem;
+            color: #1a365d;
+            margin-bottom: 15px;
+        }
+        
+        /* Footer */
+        footer {
+            background: #2d3748;
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h4 {
+            margin-bottom: 20px;
+            color: #e2b714;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #cbd5e0;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #4a5568;
+            color: #a0aec0;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .vision-content {
+                flex-direction: column;
+            }
+            
+            .facilities-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .facilities-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h1>Dattakala College</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#vision">Vision</a></li>
+                        <li><a href="#facilities">Facilities</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h2>Dattakala Shikshan Sanstha</h2>
+            <p>Established in 2009, situated on a picturesque hill top with panoramic views of the Sahyadri Ranges. Providing education from K.G. to P.G. in Pharmacy, Engineering, Management, School and Junior College.</p>
+        </div>
+    </section>
+
+    <!-- Vision Section -->
+    <section class="vision" id="vision">
+        <div class="container">
+            <h2 class="section-title">Our Vision & Mission</h2>
+            <div class="vision-content">
+                <div class="vision-text">
+                    <h3>Shaping Future Leaders</h3>
+                    <p>Our vision is to provide pre-eminent educational experiences that are stimulating, responsive to the needs of the present century and prepare students for leadership in their profession and society.</p>
+                    <p>We aim to develop a three-dimensional personality in our students: 1) Pursuit of Knowledge, 2) Commitment to Professionalism, and 3) Inculcation of Values.</p>
+                    <p>Located in a pollution-free environment with fresh air and spacious play fields, our campus provides an enchanting atmosphere conducive to overall student development.</p>
+                </div>
+                <div class="vision-image">
+                    <img src="https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="College Campus">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Stats -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>350+</h3>
+                    <p>Faculty Members</p>
+                </div>
+                <div class="stat-item">
+                    <h3>45,000+</h3>
+                    <p>Alumni</p>
+                </div>
+                <div class="stat-item">
+                    <h3>2009</h3>
+                    <p>Established Year</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facilities -->
+    <section class="facilities" id="facilities">
+        <div class="container">
+            <h2 class="section-title">Campus Facilities</h2>
+            <div class="facilities-grid">
+                <div class="facility-item">
+                    <i class="fas fa-wifi"></i>
+                    <h3>Wi-Fi Campus</h3>
+                    <p>64mbps internet leased line available 24x7 with free access for students</p>
+                </div>
+                <div class="facility-item">
+                    <i class="fas fa-home"></i>
+                    <h3>Hostel</h3>
+                    <p>Separate hostels for boys and girls with capacity of 200 each</p>
+                </div>
+                <div class="facility-item">
+                    <i class="fas fa-bus"></i>
+                    <h3>Transport</h3>
+                    <p>20 college buses for students from various places in the city</p>
+                </div>
+                <div class="facility-item">
+                    <i class="fas fa-book"></i>
+                    <h3>Library</h3>
+                    <p>Spacious 9000 Sq. ft. library open from 7:30 AM to 7:30 PM</p>
+                </div>
+                <div class="facility-item">
+                    <i class="fas fa-utensils"></i>
+                    <h3>Mess & Cafeteria</h3>
+                    <p>Monthly mess for all students and staff with canteen service</p>
+                </div>
+                <div class="facility-item">
+                    <i class="fas fa-futbol"></i>
+                    <h3>Sports</h3>
+                    <p>Sports grounds and equipment available on campus</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>Dattakala College</h4>
+                    <p>Established in 2009, providing quality education from K.G. to P.G. in a scenic hilltop location with panoramic views of the Sahyadri Ranges.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#vision">Our Vision</a></li>
+                        <li><a href="#facilities">Facilities</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Programs</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Pharmacy</a></li>
+                        <li><a href="#">Engineering</a></li>
+                        <li><a href="#">Management</a></li>
+                        <li><a href="#">School Education</a></li>
+                        <li><a href="#">Junior College</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Core Values</h4>
+                    <ul class="footer-links">
+                        <li>Pursuit of Knowledge</li>
+                        <li>Commitment to Professionalism</li>
+                        <li>Inculcation of Values</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Dattakala Shikshan Sanstha. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
